@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE CDN</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="myApp">
+        <header>
+            {{1+1}}
+
+
+        </header>
+        <nav>
+
+        </nav>
+        <section>
+            {{listafrases}}
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <hr>
+            <!-- directiva v-for="" permite iterar sobre una lista ya sea de numeros,letras uh objetos-->
+            <!-- por eso ahi en el ejemplo mifrase se hace un objeto y si quiero accede es con "."-->
+            <ul>
+                <li v-for="mifrase in listafrases">{{mifrase}}
+                    <button>{{mifrase.autor}}</button>
+                    <p>{{mifrase.frase}}</p>
+                </li>
+                <li v-for="mifrase in listafrases">{{mifrase}}</li>
+                <li v-for="mifrase in listafrases">{{mifrase.frase}}</li>
+                <li v-for="mifrase in listafrases">{{mifrase.frase}} - {{mifrase.autor}}</li>
+                <li>2</li>
+
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <hr>
+            <!-- aplicamos desestructuracion-->
+            
+            <ul>
+                <li v-for="{frase,autor} in listafrases">{{frase}}
+                    <button>{{autor}}</button>
+                    <p>{{frase}}</p>
+                </li>
+                <li v-for="{frase,autor} in listafrases">{{frase}}</li>
+                <li v-for="{frase,autor} in listafrases">{{frase}}</li>
+                <li v-for="{frase,autor} in listafrases">{{frase}} - {{autor}}</li>
+                <li>2</li>
+
+                <li>3</li>
+                <li>4</li>
+            </ul>
+
+            <!-- aLo que yo dijite agregue a la lista -->
+             <label for="idfrase">Frase:</label>
+             <input id="idfrase" type="text">
+             <label for="idautor">Autor:</label>
+             <input id="idautor" type="text">
+             <button>Agregar</button>
+            
+            <ul>
+                <li v-for="{frase,autor} in listafrases">{{frase}}
+                    <button>{{autor}}</button>
+                    <p>{{frase}}</p>
+                </li>
+                <li v-for="{frase,autor} in listafrases">{{frase}}</li>
+                <li v-for="{frase,autor} in listafrases">{{frase}}</li>
+                <li v-for="{frase,autor} in listafrases">{{frase}} - {{autor}}</li>
+                <li>2</li>
+
+                <li>3</li>
+                <li>4</li>
+            </ul>
+
+        </section>
+        <aside>
+
+        </aside>
+        <footer>
+
+        </footer>
+
+    </div>
+
+
+    <script src="../js/appfrases.js"></script>
+</body>
+
+</html>

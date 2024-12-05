@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VUE</title>
-    
+    <title>VUE CDN</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 </head>
+
 <body>
     <div id="myApp">
         <header>
+            <h1> Hola Mundo </h1>
+            <p> Con Vue.js </p>
+
+
+            <p>{{1 + 2}}</p>
+            <p>{{[1,2,3,4,5,6,7,8,9]}}</p>
+
+
+            <p>{{ {nombre: "Edison", apellido:"Cayambe"} }}</p>
+
+            <p>{{false? 'Activo':'Inactivo'}}</p>
+            <p> 1===1 </p>
+            <p>{{ 1===1 }}</p>
 
         </header>
         <nav>
-    
+
         </nav>
         <section>
-    
+            <p>{{mensaje}}</p>
+            <p>{{edad===30}}</p>
+            <p>El mensaje es: {{mensaje}}</p>
+            <p>La edad es: {{edad}}</p>
+            <button v-on:click="cambiarMensaje">Cambiar</button>
+            <p>{{edad!==35}}</p>
+
         </section>
         <aside>
-    
+
         </aside>
         <footer>
-    
+
         </footer>
 
     </div>
-    
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    {{1 + 2}}
+
     <script src="./js/app.js"></script>
 </body>
+
 </html>
