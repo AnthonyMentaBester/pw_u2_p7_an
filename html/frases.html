@@ -20,6 +20,25 @@
 
         </nav>
         <section>
+
+            <!-- aLo que yo dijite agregue a la lista -->
+            <label for="idfrase">Frase:</label>
+            <!-- al ponerle en v-model ya puedo usarla -->
+            <input v-model="frase" id="idfrase" type="text">
+            <p>{{frase}}</p>
+            <label for="idautor">Autor:</label>
+            <!-- puedo usar varias directivas --> 
+            <input v-on:keypress="eventoKeyPress" v-model="autor" id="idautor" type="text">
+            <input v-on:keypress="eventoKeyPressDes" v-model="autor" id="idautor" type="text">
+            <!-- sin el if--> 
+            <input v-on:keypress.enter="eventoKeyPressNoEnter" v-model="autor" id="idautor" type="text">
+            <p>{{autor}}</p>
+            <button v-on:click="agregarFrase">Agregar</button>
+            <button v-on:click="agregarFraseFinal">Agregar Final</button>
+           
+
+
+            <hr>
             {{listafrases}}
             <ul>
                 <li>1</li>
@@ -45,11 +64,13 @@
             </ul>
             <hr>
             <!-- aplicamos desestructuracion-->
-            
+
             <ul>
                 <li v-for="{frase,autor} in listafrases">{{frase}}
-                    <button>{{autor}}</button>
-                    <p>{{frase}}</p>
+                    <button v-show="autor!==null">{{autor}}</button>
+                    <!-- el boton se hace pequeño entonces usaremos la directiva v-if para condicionar-->
+                     <!-- v-if si construye el v-show no consutruye-->
+                    <p v-show="autor!==null">Autor:{{autor}}</p>
                 </li>
                 <li v-for="{frase,autor} in listafrases">{{frase}}</li>
                 <li v-for="{frase,autor} in listafrases">{{frase}}</li>
@@ -60,13 +81,6 @@
                 <li>4</li>
             </ul>
 
-            <!-- aLo que yo dijite agregue a la lista -->
-             <label for="idfrase">Frase:</label>
-             <input id="idfrase" type="text">
-             <label for="idautor">Autor:</label>
-             <input id="idautor" type="text">
-             <button>Agregar</button>
-            
             <ul>
                 <li v-for="{frase,autor} in listafrases">{{frase}}
                     <button>{{autor}}</button>

@@ -52,6 +52,10 @@ const app = Vue.createApp({
     //estas  propiedades permiten la comunicacion de manera biridiccional con v-model
 
 
+    //tercera opcion
+    //v-model esta permite enlazar un elemento html de entrada en la vista, con un elemento js
+    //normalmente inputs
+
     data() {
         return {
             mensaje: 'Hola Mundo PWEB',
