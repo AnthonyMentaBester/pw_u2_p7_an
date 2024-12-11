@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deber 6</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    
+    <div id="myApp">
+        <label for="">FORMULARIO</label>
+        <div class="formulario">
+            <header>
+            </header>
+            <nav>
+
+            </nav>
+            <section>
+                <div class="datos">
+                    <br>
+                    <label for="idnombre">Nombre:</label>
+                    <input v-model="nombre" id="idnombre" type="text">
+                    <P>{{nombre}}</P>
+                    <hr>
+                    <label for="idapellido">Apellido:</label>
+                    <input v-model="apellido" id="idapellido" type="text">
+                    <P>{{apellido}}</P>
+                    <hr>
+                    <label for="idhobby">Hobby:</label>
+                    <input v-model="hobby" id="idhobby" type="text">
+                    <P>{{hobby}}</P>
+                    <hr>
+                    <label for="idnacimiento">Lugar de Nacimiento:</label>
+                    <input v-model="lugarNacimiento" id="idnacimiento" type="date">
+                    <P>{{lugarNacimiento}}</P>
+                    <hr>
+                </div>
+
+                <div class="guardar">
+                    <button id="idguardar" v-on:click="agregarFormulario">Guardar</button>
+                </div>
+
+                <div class="json">
+                    <ul>
+                        <li v-for="formulario in listaformulario" >
+                            {{ formulario }}
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <aside>
+
+            </aside>
+            <footer>
+
+            </footer>
+
+        </div>
+
+    </div>
+    <script src="../js/formulario.js"></script>
+</body>
+
+</html>
